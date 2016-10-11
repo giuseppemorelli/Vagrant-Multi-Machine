@@ -1,0 +1,102 @@
+####################################
+##                                ##
+## GMdotnet Vagrant Multi Machine ##
+## Version 1.0.0                  ##
+##                                ##
+## Vagrant config file            ##
+####################################
+
+gmdotnet:
+  - host:
+      vagrantbox_name: gmweb
+      hostname: gmweb
+      private_ip: 192.168.250.10
+      ram: 1024
+      box: debian/jessie64
+      share:
+      #    - folder:
+      #        host_folder: /var/www/myproject.com
+      #        vagrant_folder: /var/www/myproject.com
+      #    - folder:
+      #        host_folder: /mnt/archive
+      #        vagrant_folder: /mnt/archive
+      rsync:
+      #    - folder:
+      #        host_folder: /mnt/extra/rsync
+      #        vagrant_folder: /mnt/extra/rsync
+      #        options:
+      #            - "-a"
+      #            - "-r"
+      #            - "-v"
+      #            - "-z"
+      #            - "--delete"
+      #    - folder:
+      #        host_folder: /mnt/extra/rsync2
+      #        vagrant_folder: /mnt/extra/rsync2
+      #        options:
+      #            - "-a"
+      #            - "-r"
+      #            - "-v"
+      #            - "-z"
+  - host:
+      vagrantbox_name: gmdb
+      hostname: gmdb
+      private_ip: 192.168.250.11
+      ram: 1024
+      box: debian/jessie64
+      share:
+      #    - folder:
+      #        host_folder: /var/www/myproject.com
+      #        vagrant_folder: /var/www/myproject.com
+      #    - folder:
+      #        host_folder: /mnt/archive
+      #        vagrant_folder: /mnt/archive
+      rsync:
+      #    - folder:
+      #        host_folder: /mnt/extra/rsync
+      #        vagrant_folder: /mnt/extra/rsync
+      #        options:
+      #            - "-a"
+      #            - "-r"
+      #            - "-v"
+      #            - "-z"
+      #            - "--delete"
+      #    - folder:
+      #        host_folder: /mnt/extra/rsync2
+      #        vagrant_folder: /mnt/extra/rsync2
+      #        options:
+      #            - "-a"
+      #            - "-r"
+      #            - "-v"
+      #            - "-z"
+  - host:
+      vagrantbox_name: gmredis
+      hostname: gmdredis
+      private_ip: 192.168.250.12
+      ram: 1024
+      box: debian/jessie64
+      share:
+      #    - folder:
+      #        host_folder: /var/www/myproject.com
+      #        vagrant_folder: /var/www/myproject.com
+      #    - folder:
+      #        host_folder: /mnt/archive
+      #        vagrant_folder: /mnt/archive
+      rsync:
+      #    - folder:
+      #        host_folder: /mnt/extra/rsync
+      #        vagrant_folder: /mnt/extra/rsync
+      #        options:
+      #            - "-a"
+      #            - "-r"
+      #            - "-v"
+      #            - "-z"
+      #            - "--delete"
+      #    - folder:
+      #        host_folder: /mnt/extra/rsync2
+      #        vagrant_folder: /mnt/extra/rsync2
+      #        options:
+      #            - "-a"
+      #            - "-r"
+      #            - "-v"
+      #            - "-z"
