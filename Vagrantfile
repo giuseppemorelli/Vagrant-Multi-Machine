@@ -4,7 +4,7 @@
 ####################################
 ##                                ##
 ## GMdotnet Vagrant Multi Machine ##
-## Version 1.0.0                  ##
+## Version 1.0.1                  ##
 ##                                ##
 ####################################
 
@@ -18,11 +18,22 @@ Vagrant.configure("2") do |config|
 
     config.vm.define machine['host']['vagrantbox_name'] do |vmhost|
         # Machine info
-        vmhost.vm.box = machine['host']['box']
+        vmhost.vm.box = machine['host']['box']['name']
+        vmhost.vm.box_check_update = machine['host']['box']['check_update']
         vmhost.vm.hostname = machine['host']['hostname']
 
+        # Hostsupdater plugin
+        if machine['host']['hostsupdate']['permanent'] == true
+          vmhost.hostsupdater.remove_on_suspend = false
+        end
+
+        enable_hostupdate = true
+        if machine['host']['hostsupdate']['enable'] == false
+          enable_hostupdate = "skip"
+        end
+
         ## Private IP Network
-        vmhost.vm.network "private_network", ip: machine['host']['private_ip']
+        vmhost.vm.network "private_network", ip: machine['host']['private_ip'], hostsupdater: enable_hostupdate
 
         ## Shared folders
         if machine['host']['share'] != nil
@@ -47,7 +58,6 @@ Vagrant.configure("2") do |config|
           # RAM
           vb.memory = machine['host']['ram']
         end
-
     end
 
   end

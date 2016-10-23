@@ -1,4 +1,4 @@
-[![stable version](https://img.shields.io/badge/stable%20version-1.0.0-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-Multi-Machine/releases/tag/1.0.0)
+[![stable version](https://img.shields.io/badge/stable%20version-1.0.1-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-Multi-Machine/releases/tag/1.0.0)
 [![develop](https://img.shields.io/badge/beta%20version-branch%20develop-oran.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-Multi-Machine/tree/develop)
 [![license](https://img.shields.io/badge/license-OSL--3-blue.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-Multi-Machine/blob/master/LICENSE.txt)
 
@@ -11,11 +11,14 @@ This is a simple Vagrantfile with yaml config for Multi Machine environment.
 - vagrant multi machine: use for create any machine you want
 - choose your favourite box
 - YAML config file. No more Vagrantfile to edit!
+- with vagrant plugin HostsUpdater: no more /etc/hosts file to edit!
 
 ## Requirements
 
 - virtualbox 5.x
 - vagrant >1.8.4
+- vagrant HostsUpdater plugin: https://github.com/cogitatio/vagrant-hostsupdater 
+  install with `vagrant plugin install vagrant-hostsupdater`
 - (in case of error of shared folder mount errors) vagrant vagrant-vbguest plugin (install with the command `vagrant plugin install vagrant-vbguest`)
 
 ## How to use
