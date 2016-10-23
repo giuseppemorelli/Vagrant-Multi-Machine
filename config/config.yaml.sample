@@ -1,18 +1,24 @@
-####################################
-##                                ##
-## GMdotnet Vagrant Multi Machine ##
-## Version 1.0.0                  ##
-##                                ##
-## Vagrant config file            ##
-####################################
+#####################################
+##                                 ##
+## GMdotnet Vagrant Multi Machine  ##
+## Version 1.0.1                   ##
+##                                 ##
+## Vagrant config file             ##
+#####################################
 
 gmdotnet:
   - host:
       vagrantbox_name: gmweb
       hostname: gmweb
+      hostsupdate:
+        enable: yes    # enable hostsupdater plugin
+        permanent: no  # your changes to /etc/hosts will be permanent
       private_ip: 192.168.250.10
       ram: 1024
-      box: debian/jessie64
+      box:
+        name: giuseppemorelli/lamp-stack
+        check_update: yes
+      # SHARED FOLDERS
       share:
       #    - folder:
       #        host_folder: /var/www/myproject.com
@@ -20,6 +26,7 @@ gmdotnet:
       #    - folder:
       #        host_folder: /mnt/archive
       #        vagrant_folder: /mnt/archive
+      # RSYNC FOLDERS
       rsync:
       #    - folder:
       #        host_folder: /mnt/extra/rsync
@@ -41,9 +48,14 @@ gmdotnet:
   - host:
       vagrantbox_name: gmdb
       hostname: gmdb
+      hostsupdate:
+        enable: yes
+        permanent: no
       private_ip: 192.168.250.11
       ram: 1024
-      box: debian/jessie64
+      box:
+        name: giuseppemorelli/lamp-stack
+        check_update: yes
       share:
       #    - folder:
       #        host_folder: /var/www/myproject.com
@@ -71,10 +83,15 @@ gmdotnet:
       #            - "-z"
   - host:
       vagrantbox_name: gmredis
-      hostname: gmdredis
+      hostname: gmredis
+      hostsupdate:
+        enable: yes
+        permanent: no
       private_ip: 192.168.250.12
       ram: 1024
-      box: debian/jessie64
+      box:
+        name: giuseppemorelli/lamp-stack
+        check_update: yes
       share:
       #    - folder:
       #        host_folder: /var/www/myproject.com
