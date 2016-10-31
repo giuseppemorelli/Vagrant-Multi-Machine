@@ -1,7 +1,7 @@
 #####################################
 ##                                 ##
 ## GMdotnet Vagrant Multi Machine  ##
-## Version 1.0.1                   ##
+## Version 1.0.2                   ##
 ##                                 ##
 ## Vagrant config file             ##
 #####################################
@@ -13,6 +13,7 @@ gmdotnet:
       hostsupdate:
         enable: yes    # enable hostsupdater plugin
         permanent: no  # your changes to /etc/hosts will be permanent
+        aliases: ["alias.gmweb", "alias2.gmweb"]  # alias for same ip in your file hosts, leave blank for no aliases
       private_ip: 192.168.250.10
       ram: 1024
       box:
@@ -51,6 +52,7 @@ gmdotnet:
       hostsupdate:
         enable: yes
         permanent: no
+        aliases: alias.gmdb
       private_ip: 192.168.250.11
       ram: 1024
       box:
@@ -87,6 +89,7 @@ gmdotnet:
       hostsupdate:
         enable: yes
         permanent: no
+        aliases: alias.gmredis
       private_ip: 192.168.250.12
       ram: 1024
       box:
