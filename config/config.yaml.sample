@@ -1,13 +1,16 @@
 #####################################
 ##                                 ##
 ## GMdotnet Vagrant Multi Machine  ##
-## Version 1.0.2                   ##
+## Version 1.0.3                   ##
 ##                                 ##
 ## Vagrant config file             ##
 #####################################
 
 gmdotnet:
   - host:
+      # enable or not the machine
+      # if you not enable the machine, it will not be created
+      enable: yes
       vagrantbox_name: gmweb
       hostname: gmweb
       hostsupdate:
@@ -19,14 +22,22 @@ gmdotnet:
       box:
         name: giuseppemorelli/lamp-stack
         check_update: yes
+        version: 1.0.2  # leave empty if you want the latest version
+      provision:
+        ansible: no
+        script: no
       # SHARED FOLDERS
       share:
       #    - folder:
       #        host_folder: /var/www/myproject.com
       #        vagrant_folder: /var/www/myproject.com
+      #        owner: vagrant
+      #        group: vagrant
       #    - folder:
       #        host_folder: /mnt/archive
       #        vagrant_folder: /mnt/archive
+      #        owner: vagrant
+      #        group: vagrant
       # RSYNC FOLDERS
       rsync:
       #    - folder:
@@ -47,17 +58,23 @@ gmdotnet:
       #            - "-v"
       #            - "-z"
   - host:
+      # enable or not the machine
+      # if you not enable the machine, it will not be created
+      enable: no
       vagrantbox_name: gmdb
       hostname: gmdb
       hostsupdate:
         enable: yes
         permanent: no
-        aliases: alias.gmdb
       private_ip: 192.168.250.11
       ram: 1024
       box:
         name: giuseppemorelli/lamp-stack
         check_update: yes
+        version: 1.0.1  # leave empty if you want the latest version
+      provision:
+        ansible: no
+        script: no
       share:
       #    - folder:
       #        host_folder: /var/www/myproject.com
@@ -84,17 +101,23 @@ gmdotnet:
       #            - "-v"
       #            - "-z"
   - host:
+      # enable or not the machine
+      # if you not enable the machine, it will not be created
+      enable: no
       vagrantbox_name: gmredis
       hostname: gmredis
       hostsupdate:
         enable: yes
         permanent: no
-        aliases: alias.gmredis
       private_ip: 192.168.250.12
       ram: 1024
       box:
         name: giuseppemorelli/lamp-stack
         check_update: yes
+        version: 1.0.1  # leave empty if you want the latest version
+      provision:
+        ansible: no
+        script: no
       share:
       #    - folder:
       #        host_folder: /var/www/myproject.com

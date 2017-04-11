@@ -1,4 +1,4 @@
-[![stable version](https://img.shields.io/badge/stable%20version-1.0.2-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-Multi-Machine/releases/tag/1.0.2)
+[![stable version](https://img.shields.io/badge/stable%20version-1.0.3-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-Multi-Machine/releases/tag/1.0.3)
 [![develop](https://img.shields.io/badge/beta%20version-branch%20develop-oran.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-Multi-Machine/tree/develop)
 [![license](https://img.shields.io/badge/license-OSL--3-blue.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-Multi-Machine/blob/master/LICENSE.txt)
 
